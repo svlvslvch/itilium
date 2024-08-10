@@ -27,6 +27,7 @@
       "@config/*": ["./src/config/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@store/*": ["./src/store/*"],
+      "@services/*": ["./src/services/*"],
       "@providers/*": ["./src/providers/*"],
       "@shared/*": ["./src/shared/*"],
       "@svg/*": ["./public/svg/*"]

@@ -7,7 +7,7 @@ export default function PageLayout({
 }) {
   return (
     <MainContainer>
-      <div className="pb-10 pt-6">{children}</div>
+      <div className="pb-10 pt-8">{children}</div>
     </MainContainer>
   );
 }

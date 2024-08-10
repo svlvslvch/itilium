@@ -20,5 +20,14 @@
     "Forgot your password?": "Забыли пароль?",
     "Profile not found": "Профиль не найден.",
     "Incorrect password Please try again": "Неверный пароль. Попробуйте ещё раз."
+  },
+  "Appeals": {
+    "Topic": "Тема",
+    "Number": "Номер",
+    "Creation date": "Дата создания",
+    "Date modified": "Дата изменения",
+    "Deadline": "Крайний срок",
+    "State": "Состояние",
+    "Display lines:": "Отображать строк:"
   }
 }

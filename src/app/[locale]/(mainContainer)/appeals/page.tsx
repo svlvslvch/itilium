@@ -1,20 +1,16 @@
-import { Metadata } from 'next';
-import { FC } from 'react';
+import { Metadata, NextPage } from 'next';
 
-// import MainContainer from '@components/MainContainer/MainContainer';
+import { Appeals } from '@modules/Appeals';
+
+import { IPageParams } from '@shared/types';
 
 export const metadata: Metadata = {
   title: 'Список обращений',
   description: 'Список обращений Itilium',
 };
 
-const AppealsPage: FC = ({}) => {
-  // console.log(kkk);
-  return (
-    <div>TEst</div>
-    // <MainContainer>
-    // </MainContainer>
-  );
+const AppealsPage: NextPage<IPageParams> = ({ searchParams }) => {
+  return <Appeals searchParams={searchParams} />;
 };
 
 export default AppealsPage;

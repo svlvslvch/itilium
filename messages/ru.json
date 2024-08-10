@@ -1,0 +1,21 @@
+{
+  "Common": {},
+  "ErrorPage": {
+    "Something went wrong!": "Что-то пошло не так!",
+    "Support": "Поддержка",
+    "To try again": "Попробовать ещё раз"
+  },
+  "ProfileMenu": {
+    "Log out": "Выйти"
+  },
+  "AuthPage": {
+    "Login to the service": "Вход в сервис",
+    "Login": "Логин",
+    "Password": "Пароль",
+    "Log in": "Войти",
+    "Remember me": "Запомнить меня",
+    "Forgot your password?": "Забыли пароль?",
+    "Profile not found": "Профиль не найден.",
+    "Incorrect password Please try again": "Неверный пароль. Попробуйте ещё раз."
+  }
+}

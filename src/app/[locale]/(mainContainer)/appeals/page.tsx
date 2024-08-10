@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Список обращений Itilium',
 };
 
-const RequestsPage: FC = ({}) => {
+const AppealsPage: FC = ({}) => {
   // console.log(kkk);
   return (
     <div>TEst</div>
@@ -17,4 +17,4 @@ const RequestsPage: FC = ({}) => {
   );
 };
 
-export default RequestsPage;
+export default AppealsPage;

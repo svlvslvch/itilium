@@ -7,6 +7,14 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.freepik.com',
+      },
+    ],
+  },
   poweredByHeader: false,
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>

@@ -5,7 +5,10 @@
     "Support": "Поддержка",
     "To try again": "Попробовать ещё раз"
   },
-  "ProfileMenu": {
+  "Navigation": {
+    "Appeals": "Обращения",
+    "Notifications": "Уведомления",
+    "New appeal": "Новое обращение",
     "Log out": "Выйти"
   },
   "AuthPage": {

@@ -1,38 +1,30 @@
 'use client';
 
 import { FC } from 'react';
-// import { useParams } from 'next/navigation';
-import { Link, usePathname } from '@navigation/*';
+import { Link } from '@navigation/*';
 
-// import { useAuthorizedUser } from '@hooks/user/useAuthorizedUser';
+import { useAuthorizedUser } from '@hooks/user/useAuthorizedUser';
 
 import MainContainer from '../MainContainer/MainContainer';
-// import Navigation from './Navigation/Navigation';
 
-// import MainLogo from '@svg/main_logo.svg';
+import Navigation from './Navigation/Navigation';
+
+import MainLogo from '@svg/main_logo.svg';
 
 const MainHeader: FC = () => {
-  // const { user, admin } = useAuthorizedUser()
-
-  // const pathname = usePathname();
-  // const params = useParams();
-
-  // const excludedPaths = ['/'];
-
-  // if (excludedPaths.includes(pathname)) {
-  //   return null;
-  // }
+  const { user } = useAuthorizedUser();
 
   return (
     <header className="h-headerHeight bg-white">
       <MainContainer>
         <ul className="flex h-headerHeight w-full items-center justify-between">
           <li>
-            <Link href={1 ? '/requests' : '/'}>
-              {/* <MainLogo alt="Itilium logo" /> */}
-              <div>Itilium</div>
+            <Link href={user ? '/appeals' : '/'}>
+              <MainLogo width="114" height="34" alt="Itilium logo" />
             </Link>
           </li>
+
+          {user && <Navigation user={user} />}
         </ul>
       </MainContainer>
     </header>

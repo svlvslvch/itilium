@@ -11,7 +11,7 @@ export const useAuthorizedUserRedirect = () => {
 
   useEffect(() => {
     if (user) {
-      push('/appeals');
+      push('/requests');
 
       return;
     }

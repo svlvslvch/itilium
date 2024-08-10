@@ -1,12 +1,12 @@
 import { NextResponse } from 'next/server';
 
-import { IAppeal } from '@shared/types/appeals/appeals.types';
+import { IRequest } from '@shared/types/requests/requests.types';
 
-interface IAppeals {
-  [key: string]: IAppeal[];
+interface IRequests {
+  [key: string]: IRequest[];
 }
 
-const appeals: IAppeals = {
+const requests: IRequests = {
   user1: [
     {
       awaiting: false,
@@ -47,7 +47,7 @@ const appeals: IAppeals = {
       service: 'Интернет',
       state: 'На согласовании',
       stateKey: 'agreement',
-      topic: 'Подключение к сети',
+      topic: 'Подключение aа к сети',
       updatedAt: '2024-07-10T14:00:00.000Z',
     },
     {
@@ -88,7 +88,7 @@ const appeals: IAppeals = {
       number: 95902,
       service: 'Поддержка рабочих мест',
       state: 'Закрыто',
-      stateKey: 'close',
+      stateKey: 'closed',
       topic: 'Установка проектора',
       updatedAt: '2024-07-13T11:08:00.000Z',
     },
@@ -130,7 +130,7 @@ const appeals: IAppeals = {
       number: 95716,
       service: 'Интернет',
       state: 'Закрыто',
-      stateKey: 'close',
+      stateKey: 'closed',
       topic: 'Электронная почта',
       updatedAt: '2024-07-15T15:37:00.000Z',
     },
@@ -186,24 +186,54 @@ export async function GET(request: Request) {
   const searchParams = new URLSearchParams(url.search);
   const username = searchParams.get('username') || '';
   const number = searchParams.get('number');
+  const state = searchParams.get('state');
 
-  if (appeals[username]) {
+  if (requests[username]) {
     if (number) {
-      const appeal = appeals[username].find(
-        (appeal) => appeal.number === Number(number)
+      const request = requests[username].find(
+        (request) => request.number === Number(number)
       );
 
       return NextResponse.json({
         success: true,
-        appeals: appeal ? [appeal] : [],
+        requests: request ? [request] : [],
       });
     }
 
-    return NextResponse.json({ success: true, appeals: appeals[username] });
+    if (state) {
+      let states: string[] = [];
+      let request = [];
+
+      switch (state) {
+        case 'open':
+          states = ['inWork', 'registered', 'agreement', 'confirmation'];
+          break;
+        case 'closed':
+          states = ['closed'];
+          break;
+        default:
+          break;
+      }
+
+      if (states.length) {
+        request = requests[username].filter((request) =>
+          states.includes(request.stateKey)
+        );
+      } else {
+        request = requests[username].filter((request) => request.awaiting);
+      }
+
+      return NextResponse.json({
+        success: true,
+        requests: request ? request : [],
+      });
+    }
+
+    return NextResponse.json({ success: true, requests: requests[username] });
   }
 
   return NextResponse.json(
-    { success: false, message: 'No appeals found for this user' },
+    { success: false, message: 'No requests found for this user' },
     { status: 404 }
   );
 }

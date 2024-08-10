@@ -6,9 +6,9 @@
     "To try again": "Попробовать ещё раз"
   },
   "Navigation": {
-    "Appeals": "Обращения",
+    "Requests": "Обращения",
     "Notifications": "Уведомления",
-    "New appeal": "Новое обращение",
+    "New request": "Новое обращение",
     "Log out": "Выйти"
   },
   "AuthPage": {
@@ -21,13 +21,18 @@
     "Profile not found": "Профиль не найден.",
     "Incorrect password Please try again": "Неверный пароль. Попробуйте ещё раз."
   },
-  "Appeals": {
+  "Requests": {
     "Topic": "Тема",
     "Number": "Номер",
     "Creation date": "Дата создания",
     "Date modified": "Дата изменения",
     "Deadline": "Крайний срок",
     "State": "Состояние",
-    "Display lines:": "Отображать строк:"
+    "Display lines:": "Отображать строк:",
+    "No requests found": "Обращений не найдено",
+    "All": "Все",
+    "Open": "Открытые",
+    "Closed": "Закрытые",
+    "Awaiting response": "Ожидают ответа"
   }
 }

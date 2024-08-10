@@ -1,4 +1,4 @@
-export interface IAppealsProps {
+export interface IRequestsProps {
   /**
    * Search параметры.
    */

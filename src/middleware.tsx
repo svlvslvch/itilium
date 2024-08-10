@@ -11,6 +11,6 @@ export default createMiddleware({
 export const config = {
   // Исключения для интернационализации
   matcher: [
-    '/((?!api|_next|shared|store|services|providers|hooks|config|.*\\..*).*)',
+    '/((?!api|_next|shared|store|services|providers|hooks|utils|config|.*\\..*).*)',
   ],
 };

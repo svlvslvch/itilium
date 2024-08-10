@@ -1,2 +1,2 @@
 export const getAuthUrl = (string: string = '') => `api/auth${string}`;
-export const getAppealsUrl = (string: string = '') => `api/appeals${string}`;
+export const getRequestsUrl = (string: string = '') => `api/requests${string}`;

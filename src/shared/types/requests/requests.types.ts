@@ -1,4 +1,4 @@
-export interface IAppeal {
+export interface IRequest {
   /**
    * Ожидает ответа.
    */
@@ -49,13 +49,17 @@ export interface IAppeal {
   updatedAt: string;
 }
 
-export interface IGetAppealsParams {
-  /**
-   * Username.
-   */
-  username: string;
+export interface IGetRequestsParams {
   /**
    * Номер обращения.
    */
   number?: number;
+  /**
+   * Состояние обращения.
+   */
+  state?: string;
+  /**
+   * Username.
+   */
+  username: string;
 }

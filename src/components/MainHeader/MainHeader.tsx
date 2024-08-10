@@ -19,7 +19,7 @@ const MainHeader: FC = () => {
       <MainContainer>
         <ul className="flex h-headerHeight w-full items-center justify-between">
           <li>
-            <Link href={user ? '/appeals' : '/'}>
+            <Link href={user ? '/requests' : '/'}>
               <MainLogo width="114" height="34" alt="Itilium logo" />
             </Link>
           </li>

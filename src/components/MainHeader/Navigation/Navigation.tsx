@@ -28,9 +28,9 @@ const Navigation: FC<INavigationProps> = (props) => {
               {t('Notifications')}
             </div>
           </Link>
-          <Link href="/appeals">
+          <Link href="/requests">
             <div className="text-xs font-semibold uppercase">
-              {t('Appeals')}
+              {t('Requests')}
             </div>
           </Link>
         </div>
@@ -44,7 +44,7 @@ const Navigation: FC<INavigationProps> = (props) => {
           radius="xl"
           leftSection={<Plus width="20" height="20" alt={t('Log out')} />}
         >
-          {t('New appeal')}
+          {t('New request')}
         </Button>
 
         <Menu shadow="md" position="bottom-end" offset={12} width={200}>
@@ -64,12 +64,12 @@ const Navigation: FC<INavigationProps> = (props) => {
             </Menu.Item>
 
             <Menu.Item className="sm:hidden">
-              <Link href="/appeals">{t('Appeals')}</Link>
+              <Link href="/requests">{t('Requests')}</Link>
             </Menu.Item>
 
             <Menu.Divider className="sm:hidden" />
 
-            <Menu.Item className="md:hidden">{t('New appeal')}</Menu.Item>
+            <Menu.Item className="md:hidden">{t('New request')}</Menu.Item>
 
             <Menu.Divider className="md:hidden" />
 

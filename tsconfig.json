@@ -30,6 +30,7 @@
       "@services/*": ["./src/services/*"],
       "@providers/*": ["./src/providers/*"],
       "@shared/*": ["./src/shared/*"],
+      "@utils/*": ["./src/utils/*"],
       "@svg/*": ["./public/svg/*"]
     }
   },

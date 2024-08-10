@@ -1,6 +1,6 @@
 import { Metadata, NextPage } from 'next';
 
-import { Appeals } from '@modules/Appeals';
+import { Requests } from '@modules/Requests';
 
 import { IPageParams } from '@shared/types';
 
@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: 'Список обращений Itilium',
 };
 
-const AppealsPage: NextPage<IPageParams> = ({ searchParams }) => {
-  return <Appeals searchParams={searchParams} />;
+const RequestsPage: NextPage<IPageParams> = ({ searchParams }) => {
+  return <Requests searchParams={searchParams} />;
 };
 
-export default AppealsPage;
+export default RequestsPage;

@@ -47,7 +47,7 @@ const requests: IRequests = {
       service: 'Интернет',
       state: 'На согласовании',
       stateKey: 'agreement',
-      topic: 'Подключение aа к сети',
+      topic: 'Подключение к сети',
       updatedAt: '2024-07-10T14:00:00.000Z',
     },
     {

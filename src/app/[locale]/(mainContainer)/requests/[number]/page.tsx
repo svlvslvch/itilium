@@ -5,7 +5,7 @@ import { Request } from '@modules/Request';
 import { IPageParams } from '@shared/types';
 
 export const metadata: Metadata = {
-  title: 'Список обращений',
+  title: 'Информация по обращению',
   description: 'Детальная информация по обращению',
 };
 

@@ -6,7 +6,7 @@ import { IPageParams } from '@shared/types';
 
 export const metadata: Metadata = {
   title: 'Список обращений',
-  description: 'Список обращений Itilium',
+  description: 'Список обращений',
 };
 
 const RequestsPage: NextPage<IPageParams> = ({ searchParams }) => {

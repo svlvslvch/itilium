@@ -7,7 +7,7 @@ interface IRequests {
 }
 
 const requests: IRequests = {
-  user1: [
+  gavrilov: [
     {
       awaiting: false,
       createdAt: '2024-07-10T08:00:00.000Z',
@@ -135,7 +135,7 @@ const requests: IRequests = {
       updatedAt: '2024-07-15T15:37:00.000Z',
     },
   ],
-  user2: [
+  fedorov: [
     {
       awaiting: false,
       createdAt: '2024-07-10T08:00:00.000Z',
@@ -179,6 +179,7 @@ const requests: IRequests = {
       updatedAt: '2024-07-10T14:00:00.000Z',
     },
   ],
+  ivanov: [],
 };
 
 export async function GET(request: Request) {

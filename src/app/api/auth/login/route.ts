@@ -7,17 +7,22 @@ interface IUsers {
 }
 
 const users: IUsers = {
-  user1: {
+  gavrilov: {
     image:
       'https://img.freepik.com/free-photo/3d-rendering-elder-person-portrait_23-2150964616.jpg',
-    password: '123456',
-    username: 'user1',
+    password: '111aaa',
+    username: 'gavrilov',
   },
-  user2: {
+  fedorov: {
     image:
       'https://img.freepik.com/free-photo/close-up-elder-cartoon-character-portrait_23-2150964401.jpg',
-    password: '654321',
-    username: 'user2',
+    password: '222bbb',
+    username: 'fedorov',
+  },
+  ivanov: {
+    image: '',
+    password: '333ccc',
+    username: 'ivanov',
   },
 };
 

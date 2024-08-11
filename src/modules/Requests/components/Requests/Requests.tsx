@@ -75,13 +75,15 @@ const Requests: FC<IRequestsProps> = (props) => {
           size="md"
           leftSection={<Glass width="20" height="20" alt="Search glass" />}
           rightSection={
-            <Cross
-              width="16"
-              height="16"
-              alt="Clear"
-              className="cursor-pointer hover:text-blue-500"
-              onClick={handleClearInput}
-            />
+            Boolean(searchString) && (
+              <Cross
+                width="16"
+                height="16"
+                alt="Clear"
+                className="cursor-pointer hover:text-blue-500"
+                onClick={handleClearInput}
+              />
+            )
           }
           value={searchString}
           onChange={handleSearch}

@@ -5,8 +5,6 @@ import { AbstractIntlMessages, NextIntlClientProvider } from 'next-intl';
 import { MantineProvider } from '@mantine/core';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import AuthProvider from './AuthProvider/AuthProvider';
-
 interface IMainProviderProps extends PropsWithChildren {
   locale: string;
   messages: AbstractIntlMessages;
@@ -35,7 +33,7 @@ const MainProvider: FC<IMainProviderProps> = ({
     >
       <MantineProvider>
         <QueryClientProvider client={queryClient}>
-          <AuthProvider>{children}</AuthProvider>
+          {children}
         </QueryClientProvider>
       </MantineProvider>
     </NextIntlClientProvider>

@@ -5,7 +5,7 @@ import { errorCatch } from '@api/api.helper';
 
 import { IUserStore } from './userStore.types';
 import { StoreService } from './userStore.service';
-import { redirectToHome } from './userStore.helper';
+import { redirectToHome, removeToStorage } from './userStore.helper';
 
 export const useUserStore = create<IUserStore>()(
   persist(
@@ -28,6 +28,7 @@ export const useUserStore = create<IUserStore>()(
           try {
             set({ user: null });
 
+            removeToStorage();
             redirectToHome();
           } catch (error: any) {
             console.error(error);

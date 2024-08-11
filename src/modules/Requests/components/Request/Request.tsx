@@ -36,11 +36,11 @@ const Request: FC<IRequestProps> = (props) => {
       <Table.Td>{padNumber(request.number)}</Table.Td>
       <Table.Td>{createdAt}</Table.Td>
       <Table.Td>{updatedAt}</Table.Td>
-      <Table.Td>{deadlineAt}</Table.Td>
+      <Table.Td>{deadlineAt === createdAt ? '-' : deadlineAt}</Table.Td>
       <Table.Td>
         <div className="flex items-center gap-2">
           <div
-            className="h-2 w-2 rounded-full"
+            className="h-2 w-2 min-w-2 rounded-full"
             style={{ background: getStateColor(request.stateKey) }}
           />
           <div>{request.state}</div>

@@ -121,7 +121,7 @@ const requests: IRequests = {
       updatedAt: '2024-07-15T13:30:00.000Z',
     },
     {
-      awaiting: true,
+      awaiting: false,
       createdAt: '2024-07-15T15:13:00.000Z',
       composition: 'Почта',
       deadlineAt: '2024-07-16T15:13:00.000Z',

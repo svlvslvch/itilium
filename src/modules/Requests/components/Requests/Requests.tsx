@@ -24,6 +24,7 @@ import { IRequestsProps } from './Requests.props';
 
 import Glass from '@svg/common/glass.svg';
 import Cross from '@svg/common/cross.svg';
+import TriangleDown from '@svg/common/triangle_down.svg';
 
 const Requests: FC<IRequestsProps> = (props) => {
   const { searchParams } = props;
@@ -36,6 +37,7 @@ const Requests: FC<IRequestsProps> = (props) => {
     state: searchParams.state,
   });
 
+  const [reverseSort, setReverseSort] = useState(false);
   const [activePage, setPage] = useState<number>(1);
   const [numberRows, setNumberRows] = useState<number>(8);
   const [searchString, setSearchString] = useState('');
@@ -44,7 +46,14 @@ const Requests: FC<IRequestsProps> = (props) => {
     includes(requests.topic.toLowerCase(), searchString.toLowerCase())
   );
 
-  const chunks = chunk(searchString ? filteredRequests : requests, numberRows);
+  const chunks = chunk(
+    searchString
+      ? filteredRequests
+      : reverseSort
+        ? requests.slice().reverse()
+        : requests,
+    numberRows
+  );
 
   const requestsOnPage = chunks[activePage - 1];
 
@@ -56,6 +65,10 @@ const Requests: FC<IRequestsProps> = (props) => {
 
   const handleClearInput = () => {
     setSearchString('');
+  };
+
+  const handleChangeReverseSort = () => {
+    setReverseSort((state) => !state);
   };
 
   const handleChangePage = (page: number) => {
@@ -106,7 +119,20 @@ const Requests: FC<IRequestsProps> = (props) => {
               <Table.Thead className="text-xs font-normal text-gray-500">
                 <Table.Tr>
                   <Table.Th className="w-2/5">{t('Topic')}</Table.Th>
-                  <Table.Th>{t('Number')}</Table.Th>
+                  <Table.Th>
+                    <div
+                      className="flex cursor-pointer items-center gap-1"
+                      onClick={handleChangeReverseSort}
+                    >
+                      {t('Number')}
+                      <TriangleDown
+                        className={`text-sky-300 transition-all ${reverseSort ? 'rotate-180' : ''}`}
+                        width="20"
+                        height="20"
+                        alt="Sort"
+                      />
+                    </div>
+                  </Table.Th>
                   <Table.Th>{t('Creation date')}</Table.Th>
                   <Table.Th>{t('Date modified')}</Table.Th>
                   <Table.Th>{t('Deadline')}</Table.Th>

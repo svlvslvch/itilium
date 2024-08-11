@@ -10,6 +10,8 @@ import { INavigationProps } from './Navigation.props';
 
 import Person from '@svg/common/person.svg';
 import Plus from '@svg/common/plus.svg';
+import Bell from '@svg/common/bell.svg';
+import FileText from '@svg/common/file_text.svg';
 import Exit from '@svg/common/exit.svg';
 
 const Navigation: FC<INavigationProps> = (props) => {
@@ -67,17 +69,34 @@ const Navigation: FC<INavigationProps> = (props) => {
           </Menu.Target>
 
           <Menu.Dropdown>
-            <Menu.Item className="sm:hidden">
+            <Menu.Item
+              className="sm:hidden"
+              leftSection={
+                <Bell width="24" height="24" alt={t('Notifications')} />
+              }
+            >
               <Link href="/notifications">{t('Notifications')}</Link>
             </Menu.Item>
 
-            <Menu.Item className="sm:hidden">
+            <Menu.Item
+              className="sm:hidden"
+              leftSection={
+                <FileText width="24" height="24" alt={t('Requests')} />
+              }
+            >
               <Link href="/requests">{t('Requests')}</Link>
             </Menu.Item>
 
             <Menu.Divider className="sm:hidden" />
 
-            <Menu.Item className="md:hidden">{t('New request')}</Menu.Item>
+            <Menu.Item
+              className="md:hidden"
+              leftSection={
+                <Plus width="24" height="24" alt={t('New request')} />
+              }
+            >
+              {t('New request')}
+            </Menu.Item>
 
             <Menu.Divider className="md:hidden" />
 

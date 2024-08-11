@@ -113,9 +113,11 @@ const Request: FC<IRequestProps> = (props) => {
 
                     <div className="mt-3">
                       <div className="text-xs text-gray-500">
-                        {t('Configuration Item')}
+                        {t('Composition of the service')}
                       </div>
-                      <div className="mt-1 text-sm font-medium">{'-'}</div>
+                      <div className="mt-1 text-sm font-medium">
+                        {request.composition}
+                      </div>
                     </div>
                   </>
                 )}

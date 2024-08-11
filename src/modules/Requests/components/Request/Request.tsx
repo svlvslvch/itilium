@@ -25,7 +25,7 @@ const Request: FC<IRequestProps> = (props) => {
           href={`requests/${request.number}?${new URLSearchParams(searchParams).toString()}`}
         >
           <div className="flex items-center gap-2">
-            <div>{request.topic}</div>
+            <div title={request.topic}>{request.topic}</div>
 
             {request.awaiting && (
               <Exclamation width="16" height="16" className="text-red-500" />
@@ -43,7 +43,7 @@ const Request: FC<IRequestProps> = (props) => {
             className="h-2 w-2 min-w-2 rounded-full"
             style={{ background: getStateColor(request.stateKey) }}
           />
-          <div>{request.state}</div>
+          <div title={request.state}>{request.state}</div>
         </div>
       </Table.Td>
     </Table.Tr>

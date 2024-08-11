@@ -9,7 +9,7 @@ import {
 
 export const useRequests = (params: IGetRequestsParams) => {
   const { isLoading: isLoadingRequests, data } = useQuery({
-    queryKey: ['get  requests', params],
+    queryKey: ['get requests', params],
     queryFn: () => {
       return RequestsService.getRequests(params);
     },
@@ -18,4 +18,17 @@ export const useRequests = (params: IGetRequestsParams) => {
   });
 
   return { isLoadingRequests, requests: data || [] };
+};
+
+export const useRequest = (params: IGetRequestsParams) => {
+  const { isLoading: isLoadingRequest, data: request } = useQuery({
+    queryKey: ['get request', params],
+    queryFn: () => {
+      return RequestsService.getRequests(params);
+    },
+    enabled: Boolean(params.username),
+    select: ({ requests }): IRequest => requests[0],
+  });
+
+  return { isLoadingRequest, request };
 };

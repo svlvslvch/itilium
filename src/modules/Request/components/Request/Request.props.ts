@@ -1,10 +1,8 @@
-import { IRequest } from '@shared/types/requests/requests.types';
-
 export interface IRequestProps {
   /**
-   * Объект обращения.
+   * Номер обращения.
    */
-  request: IRequest;
+  number: number;
   /**
    * Search параметры.
    */

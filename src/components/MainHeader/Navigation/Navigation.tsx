@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import { Link } from '@navigation/*';
+import { Link, usePathname } from '@navigation/*';
 import { Button, Menu } from '@mantine/core';
 import { useTranslations } from 'next-intl';
 
@@ -15,21 +15,29 @@ import Exit from '@svg/common/exit.svg';
 const Navigation: FC<INavigationProps> = (props) => {
   const { user } = props;
 
+  const pathname = usePathname();
+
   const t = useTranslations('Navigation');
 
   const logout = useUserStore((state) => state.logout);
 
   return (
     <>
-      <li className="hidden sm:block">
-        <div className="flex gap-8">
-          <Link href="/notifications">
+      <li className="hidden h-full sm:block">
+        <div className="flex h-full items-center gap-8">
+          <Link
+            className={`flex h-full items-center border-b-2 ${pathname.includes('/notifications') ? 'border-sky-300' : 'border-transparent'}`}
+            href="/notifications"
+          >
             <div className="text-xs font-semibold uppercase">
               {t('Notifications')}
             </div>
           </Link>
-          <Link href="/requests">
-            <div className="text-xs font-semibold uppercase">
+          <Link
+            className={`flex h-full items-center border-b-2 ${pathname.includes('/requests') ? 'border-sky-300' : 'border-transparent'}`}
+            href="/requests"
+          >
+            <div className="text-center align-middle text-xs font-semibold uppercase">
               {t('Requests')}
             </div>
           </Link>

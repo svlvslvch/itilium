@@ -1,6 +1,6 @@
 import { Metadata, NextPage } from 'next';
 
-import { Requests } from '@modules/Requests';
+import { Request } from '@modules/Request';
 
 import { IPageParams } from '@shared/types';
 
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const RequestPage: NextPage<IPageParams> = ({ params, searchParams }) => {
-  return <Requests searchParams={searchParams} />;
+  return <Request number={Number(params.number)} searchParams={searchParams} />;
 };
 
 export default RequestPage;

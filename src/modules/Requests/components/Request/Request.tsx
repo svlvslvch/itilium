@@ -3,6 +3,7 @@ import { Table } from '@mantine/core';
 import { Link } from '@navigation/*';
 
 import { getStateColor } from '@utils/requests/getStateColor';
+import { padNumber } from '@utils/requests/padNumber';
 
 import { useRelativeTime } from '@hooks/useRelativeTime/useRelativeTime';
 
@@ -11,7 +12,7 @@ import { IRequestProps } from './Request.props';
 import Exclamation from '@svg/common/exclamation.svg';
 
 const Request: FC<IRequestProps> = (props) => {
-  const { request } = props;
+  const { request, searchParams } = props;
 
   const createdAt = useRelativeTime(request.createdAt);
   const updatedAt = useRelativeTime(request.updatedAt);
@@ -20,7 +21,9 @@ const Request: FC<IRequestProps> = (props) => {
   return (
     <Table.Tr className="text-sm font-medium" key={request.number}>
       <Table.Td className="cursor-pointer font-semibold text-blue-700 hover:underline">
-        <Link href={`requests/${request.number}`}>
+        <Link
+          href={`requests/${request.number}?${new URLSearchParams(searchParams).toString()}`}
+        >
           <div className="flex items-center gap-2">
             <div>{request.topic}</div>
 
@@ -30,7 +33,7 @@ const Request: FC<IRequestProps> = (props) => {
           </div>
         </Link>
       </Table.Td>
-      <Table.Td>{request.number}</Table.Td>
+      <Table.Td>{padNumber(request.number)}</Table.Td>
       <Table.Td>{createdAt}</Table.Td>
       <Table.Td>{updatedAt}</Table.Td>
       <Table.Td>{deadlineAt}</Table.Td>

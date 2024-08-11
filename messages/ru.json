@@ -34,5 +34,14 @@
     "Open": "Открытые",
     "Closed": "Закрытые",
     "Awaiting response": "Ожидают ответа"
+  },
+  "Request": {
+    "Request № {number} from {date}": "Обращение № {number} от {date, date, ::yyyyMd} {date, date, ::Hms}",
+    "date time": "{date, date, ::yyyyMd} {date, date, ::Hm}",
+    "Deadline": "Крайний срок",
+    "Solution": "Решение",
+    "Service": "Услуга",
+    "Configuration Item": "Конфигурационная единица",
+    "Sorry, no request found": "К сожалению обращение не найдено"
   }
 }

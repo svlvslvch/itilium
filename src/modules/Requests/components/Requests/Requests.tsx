@@ -114,7 +114,11 @@ const Requests: FC<IRequestsProps> = (props) => {
 
               <Table.Tbody>
                 {map(requestsOnPage, (request) => (
-                  <Request key={request.number} request={request} />
+                  <Request
+                    key={request.number}
+                    request={request}
+                    searchParams={searchParams}
+                  />
                 ))}
               </Table.Tbody>
 

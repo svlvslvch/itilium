@@ -19,6 +19,8 @@ const Request: FC<IRequestProps> = (props) => {
   const { number, searchParams } = props;
 
   const t = useTranslations('Request');
+  const tc = useTranslations('Common');
+
   const { user } = useAuthorizedUser();
 
   const { isLoadingRequest, request } = useRequest({
@@ -89,7 +91,9 @@ const Request: FC<IRequestProps> = (props) => {
                 <div className="mt-4">
                   <div className="text-xs text-gray-500">{t('Deadline')}</div>
                   <div className="mt-1 text-sm font-medium">
-                    {t('date time', { date: new Date(request.deadlineAt) })}
+                    {request.deadlineAt === request.createdAt
+                      ? '-'
+                      : tc('date time', { date: new Date(request.deadlineAt) })}
                   </div>
                 </div>
 

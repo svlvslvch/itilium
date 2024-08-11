@@ -45,31 +45,14 @@ export const useRelativeTime = (dateAt: string) => {
     return `вчера, ${formattedTime}`;
   }
 
-  const currentYear = today.getFullYear();
-  const creationYear = date.getFullYear();
-
-  if (currentYear === creationYear) {
-    // Если в этом году отображаем дату без года
-    const formattedDateTime = formatter.dateTime(date, {
-      day: 'numeric',
-      month: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-    });
-
-    // return `dd.mm в HH:MM`;
-    return formattedDateTime.replace(/,/g, '');
-  }
-
-  // Если не в этом году отображаем дату с годом
   const formattedDateTime = formatter.dateTime(date, {
     day: 'numeric',
-    month: 'short',
+    month: 'numeric',
     year: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
   });
 
-  // return `dd.mm.yyyy в HH:MM`;
+  // return `dd.mm.yyyy HH:MM`;
   return formattedDateTime.replace(/,/g, '');
 };

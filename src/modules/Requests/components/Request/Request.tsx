@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Table } from '@mantine/core';
 import { Link } from '@navigation/*';
+import { useTranslations } from 'next-intl';
 
 import { getStateColor } from '@utils/requests/getStateColor';
 import { padNumber } from '@utils/requests/padNumber';
@@ -14,9 +15,10 @@ import Exclamation from '@svg/common/exclamation.svg';
 const Request: FC<IRequestProps> = (props) => {
   const { request, searchParams } = props;
 
+  const tc = useTranslations('Common');
+
   const createdAt = useRelativeTime(request.createdAt);
   const updatedAt = useRelativeTime(request.updatedAt);
-  const deadlineAt = useRelativeTime(request.deadlineAt);
 
   return (
     <Table.Tr className="text-sm font-medium" key={request.number}>
@@ -36,7 +38,11 @@ const Request: FC<IRequestProps> = (props) => {
       <Table.Td>{padNumber(request.number)}</Table.Td>
       <Table.Td>{createdAt}</Table.Td>
       <Table.Td>{updatedAt}</Table.Td>
-      <Table.Td>{deadlineAt === createdAt ? '-' : deadlineAt}</Table.Td>
+      <Table.Td>
+        {request.createdAt === request.deadlineAt
+          ? '-'
+          : tc('date time', { date: new Date(request.deadlineAt) })}
+      </Table.Td>
       <Table.Td>
         <div className="flex items-center gap-2">
           <div

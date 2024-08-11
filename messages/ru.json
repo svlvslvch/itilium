@@ -1,5 +1,7 @@
 {
-  "Common": {},
+  "Common": {
+    "date time": "{date, date, ::yyyyMd} {date, date, ::Hm}"
+  },
   "ErrorPage": {
     "Something went wrong!": "Что-то пошло не так!",
     "Support": "Поддержка",
@@ -37,7 +39,6 @@
   },
   "Request": {
     "Request № {number} from {date}": "Обращение № {number} от {date, date, ::yyyyMd} {date, date, ::Hms}",
-    "date time": "{date, date, ::yyyyMd} {date, date, ::Hm}",
     "Deadline": "Крайний срок",
     "Solution": "Решение",
     "Service": "Услуга",

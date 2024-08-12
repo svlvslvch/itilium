@@ -77,6 +77,7 @@ const Requests: FC<IRequestsProps> = (props) => {
 
   const handleChangeNumberRows = (value: string | null) => {
     setNumberRows(Number(value));
+    setPage(1);
   };
 
   return (
